@@ -1,0 +1,32 @@
+name = "it-term-rag-worker"
+main = "src/index.ts"
+compatibility_date = "2026-05-18"
+
+[vars]
+ASK_TOP_K = "5"
+SIMILARITY_THRESHOLD = "0.40"
+MAX_HISTORY = "10"
+RATE_LIMIT_PER_MIN = "10"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "it_terms_db"
+database_id = "REPLACE_D1_DATABASE_ID"
+
+[[vectorize]]
+binding = "VECTOR_INDEX"
+index_name = "it-terms-index"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "REPLACE_KV_NAMESPACE_ID"
+
+[ai]
+binding = "AI"
+
+# AI Gateway 経由のベースURLと認証ヘッダを環境変数で設定
+# AI_GATEWAY_BASE_URL
+# AI_GATEWAY_API_KEY
+# LLM_MODEL
+# WORKER_BEARER_TOKEN
+# EMBEDDING_MODEL (@cf/pfnet/plamo-embedding-1b)
